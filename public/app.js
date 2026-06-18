@@ -83,10 +83,12 @@ joinForm.addEventListener('submit', (event) => {
     appendMessage({
       type: 'system',
       text: `You joined as ${response.name}.`,
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
+      timestamp:
+        response.timestamp ||
+        new Date().toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+        }),
     });
   });
 });

@@ -45,16 +45,17 @@ io.on('connection', (socket) => {
     users.set(socket.id, name);
     socket.join(ROOM);
 
-    socket.emit('join:success', { name, timestamp: getTimestamp() });
+    const joinTimestamp = getTimestamp();
+    socket.emit('join:success', { name, timestamp: joinTimestamp });
     socket.to(ROOM).emit('system:message', {
       text: `${name} joined the chat.`,
-      timestamp: getTimestamp(),
+      timestamp: joinTimestamp,
     });
 
     emitUsersUpdate();
 
     if (typeof callback === 'function') {
-      callback({ ok: true, name });
+      callback({ ok: true, name, timestamp: joinTimestamp });
     }
   });
 
