@@ -80,6 +80,7 @@ io.on('connection', (socket) => {
   socket.on('typing', (isTyping) => {
     const name = users.get(socket.id);
     if (!name) {
+      typingUsers.delete(socket.id);
       return;
     }
 

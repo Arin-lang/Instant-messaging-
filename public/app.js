@@ -17,6 +17,8 @@ let joined = false;
 let currentUserName = '';
 let typingTimeout;
 let lastTypingSentAt = 0;
+const TYPING_THROTTLE_MS = 500;
+const TYPING_DEBOUNCE_MS = 900;
 
 const isNearBottom = () =>
   messages.scrollHeight - messages.scrollTop - messages.clientHeight < 60;
@@ -116,7 +118,7 @@ messageInput.addEventListener('input', () => {
   }
 
   const now = Date.now();
-  if (now - lastTypingSentAt > 500) {
+  if (now - lastTypingSentAt > TYPING_THROTTLE_MS) {
     socket.emit('typing', true);
     lastTypingSentAt = now;
   }
@@ -124,7 +126,7 @@ messageInput.addEventListener('input', () => {
   clearTimeout(typingTimeout);
   typingTimeout = setTimeout(() => {
     socket.emit('typing', false);
-  }, 900);
+  }, TYPING_DEBOUNCE_MS);
 });
 
 socket.on('chat:message', (message) => {
