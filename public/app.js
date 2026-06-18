@@ -146,8 +146,8 @@ socket.on('users:update', (onlineUsers) => {
 });
 
 socket.on('typing:update', (payload) => {
-  const typingUsers = (payload && Array.isArray(payload.users) ? payload.users : [])
-    .filter((name) => Boolean(name) && name !== currentUserName);
+  const incomingUsers = Array.isArray(payload?.users) ? payload.users : [];
+  const typingUsers = incomingUsers.filter((name) => Boolean(name) && name !== currentUserName);
 
   if (typingUsers.length === 0) {
     typing.textContent = '';
