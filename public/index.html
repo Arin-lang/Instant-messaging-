@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instant Messenger MVP</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="join-overlay" id="join-overlay">
+      <form id="join-form" class="join-card" autocomplete="off">
+        <h1>Join chat</h1>
+        <label for="username">Display name</label>
+        <input id="username" name="username" maxlength="32" required />
+        <p class="error" id="join-error" aria-live="polite"></p>
+        <button type="submit">Join</button>
+      </form>
+    </div>
+
+    <main class="layout">
+      <aside class="users-panel">
+        <h2>Online users</h2>
+        <ul id="users"></ul>
+      </aside>
+
+      <section class="chat-panel">
+        <header>
+          <h2>Global chat</h2>
+          <p id="typing" class="typing" aria-live="polite"></p>
+        </header>
+
+        <ul id="messages" class="messages"></ul>
+
+        <form id="message-form" class="composer" autocomplete="off">
+          <input
+            id="message-input"
+            type="text"
+            placeholder="Type a message"
+            maxlength="1000"
+            disabled
+            required
+          />
+          <button type="submit" disabled id="send-btn">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

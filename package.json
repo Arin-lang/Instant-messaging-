@@ -1,0 +1,26 @@
+{
+  "name": "instant-messaging-",
+  "version": "1.0.0",
+  "description": "MVP instant messaging app with Express and Socket.IO",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arin-lang/Instant-messaging-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arin-lang/Instant-messaging-/issues"
+  },
+  "homepage": "https://github.com/Arin-lang/Instant-messaging-#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}
