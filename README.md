@@ -19,12 +19,12 @@ This project provides a single global chat room where connected users can:
 
 ## Project structure
 
-- `/home/runner/work/Instant-messaging-/Instant-messaging-/server.js`
-- `/home/runner/work/Instant-messaging-/Instant-messaging-/public/index.html`
-- `/home/runner/work/Instant-messaging-/Instant-messaging-/public/style.css`
-- `/home/runner/work/Instant-messaging-/Instant-messaging-/public/app.js`
-- `/home/runner/work/Instant-messaging-/Instant-messaging-/package.json`
-- `/home/runner/work/Instant-messaging-/Instant-messaging-/.gitignore`
+- `server.js`
+- `public/index.html`
+- `public/style.css`
+- `public/app.js`
+- `package.json`
+- `.gitignore`
 
 ## Setup and run
 

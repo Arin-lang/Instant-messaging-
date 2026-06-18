@@ -1,5 +1,5 @@
 {
-  "name": "instant-messaging-",
+  "name": "instant-messaging-mvp",
   "version": "1.0.0",
   "description": "MVP instant messaging app with Express and Socket.IO",
   "main": "server.js",
